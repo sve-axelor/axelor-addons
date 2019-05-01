@@ -1,0 +1,2 @@
+"name";"code";"installOrder";"description";"imagePath";"modules";"dependsOn";"sequence"
+"Metabase";"metabase";51;"Metabase configuration";"metabase.png";"Axelor-metabase";"base";101

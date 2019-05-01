@@ -1,0 +1,26 @@
+apply plugin: "com.axelor.app-module"
+
+apply {
+	version = "5.0.0-SNAPSHOT"
+}
+
+axelor {
+	title "Axelor :: Metabase"
+	description "Axelor Metabase Module"
+	removable true
+}
+
+dependencies {
+	compile project(":modules:axelor-base")
+	compile group: 'com.squareup.okhttp', name: 'okhttp', version: '2.7.5'
+	
+}
+
+task copyWebapp(type: Copy) {
+	destinationDir = file(rootProject.buildDir)
+	into("webapp/metabase") {
+		from "src/main/webapp"
+	}
+}
+	
+rootProject.tasks.war.dependsOn copyWebapp

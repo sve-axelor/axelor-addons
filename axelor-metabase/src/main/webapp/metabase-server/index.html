@@ -1,0 +1,30 @@
+<html>
+<head>
+<script type="text/javascript">
+function loadNewDoc(){
+	document.cookie = "metabase.SESSION=7b40ec25-bff7-4f61-bd06-0c746a36741c";
+	console.log(document.cookie);
+	window.location="http://192.168.1.180:3000/";
+}
+
+function doAuth() {
+	 var url = "http://192.168.1.180:3000";
+	var data = {"username":"s.vekaria@axelor.com","password":"sanskruti5"};
+	
+	fetch(url + "/api/session", {
+		method: "POST",
+		mode: "cors",
+		headers: {
+            "Content-Type": "application/json",
+		},
+		body: JSON.stringify(data)	
+	}); 
+	
+	
+}
+</script>
+</head>
+<body onload="doAuth()">
+	<h1>Redirecting...</h1>
+</body>
+</html>

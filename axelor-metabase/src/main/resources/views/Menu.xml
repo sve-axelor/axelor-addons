@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+	<menuitem name="metabse-root" title="Metabase" icon="fa-file-text-o" 
+		icon-background="#31b4a9" order="-69" if="__config__.app.isApp('metabase')"/>
+	
+	<menuitem name="metabase-server" title="Metabase server" parent="metabse-root" 
+		action="metabase.server"/>
+		
+	<action-method name="metabase.server">
+		<call class="com.axelor.apps.metabase.web.AppMetabaseController" method="openMetabaseServer"/>
+	</action-method>
+	
+</object-views>
